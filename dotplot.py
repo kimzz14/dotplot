@@ -10,6 +10,7 @@ parser.add_option("-l","--length",action = 'store',type = 'int',dest = 'LENGTH',
 (opt, args) = parser.parse_args()
 if opt.INPUT == None or opt.IDENTITY == None or opt.LENGTH == None:
     print('     python dotplot.py --input test.blastn_m6 --identity 99 --length 10000')
+    sys.exit()
 
 
 def get_color(identity):
