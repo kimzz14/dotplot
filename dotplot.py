@@ -1,4 +1,15 @@
 from lib.KJH_SVG.KJH_SVG import element
+from optparse import OptionParser
+import sys
+
+#option parser
+parser = OptionParser(usage="""Run annotation.py \n Usage: %prog [options]""")
+parser.add_option("-i","--input",action = 'store',type = 'string',dest = 'INPUT',help = "")
+parser.add_option("-m","--identity",action = 'store',type = 'float',dest = 'IDENTITY',help = "")
+parser.add_option("-l","--length",action = 'store',type = 'int',dest = 'LENGTH',help = "")
+(opt, args) = parser.parse_args()
+if opt.INPUT == None or opt.IDENTITY == None or opt.LENGTH == None:
+    print('     python dotplot.py --input test.blastn_m6 --identity 99 --length 10000')
 
 
 def get_color(identity):
@@ -13,9 +24,9 @@ def get_color(identity):
 
 
 
-infile = 'test.blastn_m6'
-threshold_identity = 99
-threshold_length = 1000
+infile = opt.INPUT
+threshold_identity = opt.IDENTITY 
+threshold_length = opt.LENGTH
 
 imageLength = 800
 margin = 80
