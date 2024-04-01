@@ -1,0 +1,3 @@
+[submodule "lib/KJH_SVG"]
+	path = lib/KJH_SVG
+	url = https://github.com/kimzz14/KJH_SVG.git
