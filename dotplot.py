@@ -62,14 +62,6 @@ for line in fin:
     length_DICT[sbjct][1] = max([length_DICT[sbjct][1], sbjct_start, sbjct_end])
 fin.close()
 
-#for seqName, [min, max] in length_DICT.items():
-#    print(seqName, min, max)
-
-
-
-
-
-
 fin = open(infile)
 image_DICT = {}
 ratio_DICT = {}
@@ -170,7 +162,6 @@ for line in fin:
         line.attr('stroke', 'black')
         line.attr('stroke-width', '1')
 
-
         x = margin - 50
         y = imageLength - margin
         text = element('text', svg)
@@ -179,8 +170,6 @@ for line in fin:
         text.attr('font-size', '10')
         text.attr('fill', 'red')
         text.add(sbjctMinPos)
-        print(x, y)
-
 
         x = margin - 50
         y = imageLength - margin - ratio_DICT[key][sbjct] * sbjctLength
@@ -190,7 +179,6 @@ for line in fin:
         text.attr('font-size', '10')
         text.attr('fill', 'red')
         text.add(sbjctMaxPos)
-        print(x, y)
 
         x = margin - 60
         y = (imageLength * 2 - margin * 2 - ratio_DICT[key][sbjct] * sbjctLength) /2
