@@ -37,7 +37,9 @@ margin = 80
 length_DICT = {}
 fin = open(infile)
 for line in fin:
-    query, sbjct, identity, alignment_length, mismatches, gap_openings, query_start, query_end, sbjct_start, sbjct_end, e_value, bit_score = line.rstrip('\n').split('\t')
+    mylist = line.rstrip('\n').split('\t')
+    if len(mylist) != 12: break
+    query, sbjct, identity, alignment_length, mismatches, gap_openings, query_start, query_end, sbjct_start, sbjct_end, e_value, bit_score = mylist
 
     identity = float(identity)
     if identity < threshold_identity: continue
@@ -72,7 +74,9 @@ fin = open(infile)
 image_DICT = {}
 ratio_DICT = {}
 for line in fin:
-    query, sbjct, identity, alignment_length, mismatches, gap_openings, query_start, query_end, sbjct_start, sbjct_end, e_value, bit_score = line.rstrip('\n').split('\t')
+    mylist = line.rstrip('\n').split('\t')
+    if len(mylist) != 12: break
+    query, sbjct, identity, alignment_length, mismatches, gap_openings, query_start, query_end, sbjct_start, sbjct_end, e_value, bit_score = mylist
 
     identity = float(identity)
     if identity < threshold_identity: continue
